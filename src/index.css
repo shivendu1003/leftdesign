@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "tnum";
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Accessible focus rings */
+  :focus-visible {
+    outline: 3px solid #059669;
+    outline-offset: 3px;
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Custom Reachability Overlays */
+/* Left-hand holding reach zone: thumb anchored at bottom-left */
+.reach-arc-left-easy {
+  background: radial-gradient(circle at 8% 92%, rgba(16, 185, 129, 0.22) 0%, rgba(16, 185, 129, 0.12) 48%, rgba(16, 185, 129, 0) 70%);
+}
+
+.reach-arc-left-stretch {
+  background: radial-gradient(circle at 8% 92%, transparent 48%, rgba(245, 158, 11, 0.18) 52%, rgba(245, 158, 11, 0.05) 75%, transparent 85%);
+}
+
+.reach-arc-left-hard {
+  background: radial-gradient(circle at 98% 10%, rgba(239, 68, 68, 0.22) 0%, rgba(239, 68, 68, 0.08) 55%, transparent 75%);
+}
+
+/* Right-hand holding reach zone: thumb anchored at bottom-right */
+.reach-arc-right-easy {
+  background: radial-gradient(circle at 92% 92%, rgba(16, 185, 129, 0.22) 0%, rgba(16, 185, 129, 0.12) 48%, rgba(16, 185, 129, 0) 70%);
+}
+
+.reach-arc-right-stretch {
+  background: radial-gradient(circle at 92% 92%, transparent 48%, rgba(245, 158, 11, 0.18) 52%, rgba(245, 158, 11, 0.05) 75%, transparent 85%);
+}
+
+.reach-arc-right-hard {
+  background: radial-gradient(circle at 2% 10%, rgba(239, 68, 68, 0.22) 0%, rgba(239, 68, 68, 0.08) 55%, transparent 75%);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.5);
+}
